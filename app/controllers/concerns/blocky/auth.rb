@@ -10,7 +10,7 @@ module Blocky
     end
 
     def blocky_current_user
-      respond_to?(:current_user) ? current_user : nil
+      Blogelator.user_class.constantize.find(current_user)
     end
 
     def current_ability
